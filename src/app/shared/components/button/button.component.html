@@ -1,0 +1,6 @@
+<button [type]="type" [disabled]="disabled" class="btn purple flex-center w-full">
+  <app-loading *ngIf="loading; else btnName"></app-loading>
+  <ng-template #btnName>
+    <span>{{ name }}</span>
+  </ng-template>
+</button>

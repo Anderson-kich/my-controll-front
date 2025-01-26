@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Utility Classes */
+@layer components {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-center-col {
+    @apply flex flex-col justify-center items-center;
+  }
+}
+
+/* Button Styles */
+@layer components {
+  .btn {
+    @apply flex justify-center items-center;
+    @apply gap-2 rounded-md px-9 h-12;
+    @apply text-base font-semibold;
+  }
+
+  .btn.purple {
+    @apply bg-purple-500 hover:bg-purple-600 text-white active:bg-purple-500 active:shadow-inner;
+    @apply disabled:bg-purple-300 disabled:hover:bg-purple-300 disabled:text-neutral-50;
+  }
+
+  .btn.disabled {
+    @apply bg-zinc-300 text-white border-none;
+  }
+
+  .btn.blue {
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
+  }
+
+  .btn.red {
+    @apply bg-red-500 hover:bg-red-600 text-white;
+  }
+
+  .btn.green {
+    @apply bg-green-500 hover:bg-green-600 text-white;
+  }
+}
+
+/* Form Styles */
+@layer components {
+  .input-form {
+    @apply rounded-md pl-4 h-12 border border-gray-300 text-zinc-500;
+    @apply focus:bg-purple-50 focus:border-2 focus:border-purple-200;
+  }
+
+  .label-form {
+    @apply rounded-md text-zinc-400 absolute top-1/2 left-2;
+    @apply transform -translate-y-1/2 px-1 transition-all text-sm;
+  }
+}
+
+//typography
+@layer components {
+  .hero {
+    @apply font-bold text-zinc-800 text-4xl leading-9 tracking-tighter;
+  }
+
+  h1,
+  .heading-1 {
+    @apply font-bold text-zinc-800 text-3xl leading-9 tracking-tighter;
+  }
+
+  h2,
+  .heading-2 {
+    @apply font-bold text-zinc-800 text-2xl leading-9 tracking-tighter;
+  }
+
+  h3,
+  .heading-3 {
+    @apply font-bold text-zinc-800 text-xl leading-9 tracking-tighter;
+  }
+
+  h4,
+  .heading-4 {
+    @apply font-bold text-zinc-800 text-base leading-9 tracking-tighter;
+  }
+
+  p,
+  .body {
+    @apply font-normal text-zinc-800 text-base leading-9 tracking-tighter;
+  }
+
+  .body-small {
+    @apply font-normal text-zinc-800 text-sm leading-9 tracking-tighter;
+  }
+
+  .hyperlink {
+    @apply text-base font-semibold text-purple-500 cursor-pointer hover:text-purple-700;
+  }
+
+  .hyperlink-small {
+    @apply text-sm font-semibold text-purple-500 cursor-pointer hover:text-purple-700;
+  }
+
+  .label-error {
+    @apply text-base text-red-500 font-medium leading-9 tracking-tighter;
+  }
+
+  .label-error-small {
+    @apply text-sm text-red-500 font-medium leading-4;
+  }
+}

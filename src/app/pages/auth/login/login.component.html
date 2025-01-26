@@ -1,0 +1,28 @@
+<div class="min-h-screen container-te flex-center bg-gray-50">
+  <div class="teste">
+    <div class="flex justify-start items-center gap-2">
+      <button
+        class="text-2xl"
+        [ngClass]="isSignIn ? 'text-purple-600' : 'text-gray-400'"
+        (click)="isSignIn = isSignIn = true"
+      >
+        Sign in
+      </button>
+      <span class="text-gray-400">or</span>
+      <button
+        class="text-2xl"
+        [ngClass]="!isSignIn ? 'text-purple-600' : 'text-gray-400'"
+        (click)="isSignIn = isSignIn = false"
+      >
+        Sign up
+      </button>
+    </div>
+    <div class="w-[400px] h-[400px] mt-7">
+      <app-sign-up *ngIf="!isSignIn; else signUp"></app-sign-up>
+
+      <ng-template #signUp>
+        <app-sign-in></app-sign-in>
+      </ng-template>
+    </div>
+  </div>
+</div>

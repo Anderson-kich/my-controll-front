@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  line-height: 1;
+}
+
+body {
+  font-size: 1rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// input:-webkit-autofill,
+// textarea:-webkit-autofill,
+// select:-webkit-autofill {
+//   background-color: transparent !important; /* Remove o fundo amarelo/verde */
+//   color: inherit !important; /* Mantém a cor do texto definida */
+//   border: 1px solid inherit !important; /* Aplica a borda padrão */
+//   box-shadow: 0 0 0px 1000px transparent inset !important; /* Remove sombras do autofill */
+//   transition:
+//     background-color 0s,
+//     color 0s; /* Remove a transição automática */
+// }
+
+input:-webkit-autofill {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-color: transparent !important;
+  color: #71717a !important;
+  box-shadow: 0 0 0px 1000px #f9fafb inset !important;
+}

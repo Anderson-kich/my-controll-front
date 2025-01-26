@@ -1,0 +1,88 @@
+<form [formGroup]="signUpForm" class="flex-center-col gap-7">
+  <div class="flex flex-col w-full">
+    <div class="form-field">
+      <input
+        formControlName="name"
+        [appValidationClass]="signUpForm.get('name')"
+        autocomplete="off"
+        class="input-form"
+        type="text"
+        placeholder=" "
+      />
+      <label class="label-form"> Name </label>
+    </div>
+    <app-form-hint-error [control]="signUpForm.get('name')"></app-form-hint-error>
+  </div>
+
+  <div class="flex flex-col w-full">
+    <div class="form-field">
+      <input
+        autocomplete="off"
+        formControlName="email"
+        [appValidationClass]="signUpForm.get('email')"
+        class="input-form"
+        type="email"
+        id="email"
+        placeholder=" "
+      />
+      <label class="label-form" for="email"> E-mail </label>
+    </div>
+    <app-form-hint-error [control]="signUpForm.get('email')"></app-form-hint-error>
+  </div>
+
+  <div class="flex flex-col w-full relative">
+    <div class="form-field">
+      <input
+        formControlName="password"
+        [appValidationClass]="signUpForm.get('password')"
+        autocomplete="off"
+        class="input-form"
+        [type]="isVisiblePassword ? 'text' : 'password'"
+        id="password"
+        placeholder=" "
+      />
+      <label class="label-form" for="password"> Password </label>
+    </div>
+    <div class="absolute top-2 right-3 cursor-pointer">
+      <app-icon
+        [name]="isVisiblePassword ? 'visibility' : 'visibility_off'"
+        (click)="isVisiblePassword = !isVisiblePassword"
+      ></app-icon>
+    </div>
+    <app-form-hint-error [control]="signUpForm.get('password')"></app-form-hint-error>
+  </div>
+
+  <div class="flex flex-col w-full relative">
+    <div class="form-field">
+      <input
+        formControlName="confirmPassword"
+        [appValidationClass]="signUpForm.get('confirmPassword')"
+        autocomplete="off"
+        class="input-form"
+        [type]="isVisibleConfirmPassword ? 'text' : 'password'"
+        id="password"
+        placeholder=" "
+      />
+      <label class="label-form" for="password"> Confirm password </label>
+    </div>
+    <div class="absolute top-2 right-3 cursor-pointer">
+      <app-icon
+        [name]="isVisibleConfirmPassword ? 'visibility' : 'visibility_off'"
+        (click)="isVisibleConfirmPassword = !isVisibleConfirmPassword"
+      ></app-icon>
+    </div>
+    <app-form-hint-error [control]="signUpForm.get('confirmPassword')"></app-form-hint-error>
+  </div>
+
+  <div class="w-full">
+    <app-button
+      name="Sign up"
+      [loading]="isLoading"
+      [disabled]="
+        !signUpForm.valid ||
+        signUpForm.get('password')?.value !== signUpForm.get('confirmPassword')?.value
+      "
+      [type]="'submit'"
+    ></app-button>
+  </div>
+</form>

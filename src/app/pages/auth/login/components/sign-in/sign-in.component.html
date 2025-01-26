@@ -1,0 +1,55 @@
+<form [formGroup]="signInForm" autocomplete="off" class="flex-center-col">
+  <div class="flex-center-col gap-7 w-full">
+    <div class="flex flex-col w-full">
+      <div class="form-field">
+        <input
+          formControlName="email"
+          [appValidationClass]="signInForm.get('email')"
+          autocomplete="off"
+          class="input-form"
+          type="email"
+          id="email"
+          placeholder=" "
+        />
+        <label class="label-form" for="email"> E-mail </label>
+      </div>
+      <app-form-hint-error [control]="signInForm.get('email')"></app-form-hint-error>
+    </div>
+
+    <div class="flex flex-col w-full relative">
+      <div class="form-field">
+        <input
+          formControlName="password"
+          [appValidationClass]="signInForm.get('password')"
+          autocomplete="off"
+          class="input-form"
+          [type]="isVisiblePassword ? 'text' : 'password'"
+          id="password"
+          placeholder=" "
+        />
+        <label class="label-form" for="password"> Password </label>
+      </div>
+      <div class="absolute top-2 right-3 cursor-pointer">
+        <app-icon
+          [name]="isVisiblePassword ? 'visibility' : 'visibility_off'"
+          (click)="isVisiblePassword = !isVisiblePassword"
+        ></app-icon>
+      </div>
+      <app-form-hint-error [control]="signInForm.get('password')"></app-form-hint-error>
+    </div>
+  </div>
+
+  <div class="flex w-full justify-end mt-3">
+    <span class="hyperlink-small">Forgot your password?</span>
+  </div>
+
+  <div class="w-full mt-7">
+    <app-button
+      name="Sign in"
+      [loading]="isLoading"
+      [disabled]="!signInForm.valid"
+      [type]="'submit'"
+      (click)="onSubmit()"
+    ></app-button>
+  </div>
+</form>

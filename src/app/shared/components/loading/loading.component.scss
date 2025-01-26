@@ -1,0 +1,38 @@
+.app-loading {
+  @apply relative flex flex-col items-center justify-center h-full;
+}
+
+.spinner {
+  @apply h-[30px] w-[30px] animate-rotate  absolute inset-0 m-auto;
+
+  &.spinner-large {
+    @apply h-[200px] w-[200px];
+  }
+}
+
+.app-loading .spinner .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: #f4f4f5;
+
+  &.purple {
+    stroke: #9333ea;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

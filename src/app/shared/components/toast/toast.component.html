@@ -1,0 +1,7 @@
+<div class="toast animate-in" [ngClass]="status" *ngIf="visible">
+  <span class="flex-center gap-3 text-sm leading-none">
+    <app-icon [name]="getStatusIcon()" [colorClass]="getStatusClass()"></app-icon>
+    {{ message }}
+    <button class="toast-button" (click)="close()">Entendi</button>
+  </span>
+</div>
