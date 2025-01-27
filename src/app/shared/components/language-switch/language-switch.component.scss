@@ -1,0 +1,15 @@
+.selected-lang {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fcfaff;
+}
+
+.pt-br {
+  background-image: url('../../../../assets/images/flag-br.png');
+  background-size: cover;
+  background-position: center;
+}
+.en-us {
+  background-image: url('../../../../assets/images/flag-en.png');
+  background-size: cover;
+  background-position: center;
+}

@@ -9,7 +9,7 @@
         type="text"
         placeholder=" "
       />
-      <label class="label-form"> Name </label>
+      <label class="label-form"> {{ 'LABEL_NAME' | translate }} </label>
     </div>
     <app-form-hint-error [control]="signUpForm.get('name')"></app-form-hint-error>
   </div>
@@ -41,7 +41,7 @@
         id="password"
         placeholder=" "
       />
-      <label class="label-form" for="password"> Password </label>
+      <label class="label-form" for="password"> {{ 'LABEL_PASSWORD' | translate }} </label>
     </div>
     <div class="absolute top-2 right-3 cursor-pointer">
       <app-icon
@@ -63,7 +63,7 @@
         id="password"
         placeholder=" "
       />
-      <label class="label-form" for="password"> Confirm password </label>
+      <label class="label-form" for="password"> {{ 'LABEL_CONFIRM_PASSWORD' | translate }} </label>
     </div>
     <div class="absolute top-2 right-3 cursor-pointer">
       <app-icon
@@ -76,7 +76,7 @@
 
   <div class="w-full">
     <app-button
-      name="Sign up"
+      [name]="'BUTTON_SIGN_UP' | translate"
       [loading]="isLoading"
       [disabled]="
         !signUpForm.valid ||

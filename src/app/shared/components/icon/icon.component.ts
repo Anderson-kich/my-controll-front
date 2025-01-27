@@ -10,6 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class IconComponent {
   @Input() name: string = 'home';
-
+  @Input() visiblity: boolean = true;
   @Input() colorClass: string = 'text-zinc-500';
 }

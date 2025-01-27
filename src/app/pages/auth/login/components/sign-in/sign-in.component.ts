@@ -8,10 +8,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { ButtonComponent } from '../../../../../shared/components/button/button.component';
 import { FormHintErrorComponent } from '../../../../../shared/components/form-hint-error/form-hint-error.component';
 import { IconComponent } from '../../../../../shared/components/icon/icon.component';
 import { ValidationClassDirective } from '../../../../../shared/directives/validation-class.directive';
+import { TranslationPipe } from '../../../../../shared/pipes/translation.pipe';
 import { ToastService } from '../../../../../shared/services/toast-service/toast.service';
 
 @Component({
@@ -19,12 +21,14 @@ import { ToastService } from '../../../../../shared/services/toast-service/toast
   standalone: true,
   imports: [
     ButtonComponent,
+    RouterLink,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     ValidationClassDirective,
     FormHintErrorComponent,
     IconComponent,
+    TranslationPipe,
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
@@ -39,10 +43,6 @@ export class SignInComponent {
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
   });
-
-  public changeIcon(): void {
-    console.log('changeIcon');
-  }
 
   public onSubmit(): void {
     this.isLoading = true;

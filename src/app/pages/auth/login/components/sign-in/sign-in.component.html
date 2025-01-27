@@ -27,7 +27,7 @@
           id="password"
           placeholder=" "
         />
-        <label class="label-form" for="password"> Password </label>
+        <label class="label-form" for="password"> {{ 'LABEL_PASSWORD' | translate }} </label>
       </div>
       <div class="absolute top-2 right-3 cursor-pointer">
         <app-icon
@@ -40,12 +40,14 @@
   </div>
 
   <div class="flex w-full justify-end mt-3">
-    <span class="hyperlink-small">Forgot your password?</span>
+    <a routerLink="password/reset" class="hyperlink-small">{{
+      'BUTTON_FORGOT_PASSWORD' | translate
+    }}</a>
   </div>
 
   <div class="w-full mt-7">
     <app-button
-      name="Sign in"
+      [name]="'BUTTON_SIGN_IN' | translate"
       [loading]="isLoading"
       [disabled]="!signInForm.valid"
       [type]="'submit'"

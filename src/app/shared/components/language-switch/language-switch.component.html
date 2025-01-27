@@ -1,0 +1,42 @@
+<div class="flex-center-col relative">
+  <app-button (click)="displayMenu = !displayMenu" className="icon-rounded">
+    <app-icon name="language" colorClass="text-purple-400"></app-icon>
+  </app-button>
+
+  <div
+    class="absolute top-11 right-0 flex-center-col gap-4 selected-lang w-[200px] rounded-md pb-3"
+    *ngIf="displayMenu"
+  >
+    <span class="h-10 text-gray-400 p-4">Selected Language</span>
+    <div class="w-full">
+      <app-button (click)="switchLanguage('en')" className="switch-lang">
+        <div class="flex justify-between items-center w-full">
+          <span class="en-us w-[24px] h-[24px]"></span>
+          EN-US
+          <div class="w-[40px] flex-center">
+            <app-icon
+              [visiblity]="selectedLanguage === 'en'"
+              name="check"
+              colorClass="text-gray-400"
+            ></app-icon>
+          </div>
+        </div>
+      </app-button>
+    </div>
+    <div class="w-full">
+      <app-button (click)="switchLanguage('pt')" className="switch-lang">
+        <div class="flex justify-between items-center w-full">
+          <span class="pt-br w-[24px] h-[24px]"></span>
+          PT-BR
+          <div class="w-[40px] flex-center">
+            <app-icon
+              [visiblity]="selectedLanguage === 'pt'"
+              name="check"
+              colorClass="text-gray-400"
+            ></app-icon>
+          </div>
+        </div>
+      </app-button>
+    </div>
+  </div>
+</div>

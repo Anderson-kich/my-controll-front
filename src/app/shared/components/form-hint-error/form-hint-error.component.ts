@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { TEXT } from '../../utilities/const-text-app';
+import { TranslationPipe } from '../../pipes/translation.pipe';
 
 @Component({
   selector: 'app-form-hint-error',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslationPipe],
   templateUrl: './form-hint-error.component.html',
   styleUrl: './form-hint-error.component.scss',
 })
@@ -17,6 +17,4 @@ export class FormHintErrorComponent implements OnChanges {
   @Input() public control: AbstractControl | null = null;
 
   @Input() public message: string | null = null;
-
-  public TEXT = TEXT;
 }

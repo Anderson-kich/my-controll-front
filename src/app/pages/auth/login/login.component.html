@@ -1,4 +1,4 @@
-<div class="min-h-screen container-te flex-center bg-gray-50">
+<div class="min-h-screen login-container flex-center">
   <div class="teste">
     <div class="flex justify-start items-center gap-2">
       <button
@@ -6,15 +6,15 @@
         [ngClass]="isSignIn ? 'text-purple-600' : 'text-gray-400'"
         (click)="isSignIn = isSignIn = true"
       >
-        Sign in
+        {{ 'SIGN_IN' | translate }}
       </button>
-      <span class="text-gray-400">or</span>
+      <span class="text-gray-400">{{ 'OR' | translate }}</span>
       <button
         class="text-2xl"
         [ngClass]="!isSignIn ? 'text-purple-600' : 'text-gray-400'"
         (click)="isSignIn = isSignIn = false"
       >
-        Sign up
+        {{ 'SIGN_UP' | translate }}
       </button>
     </div>
     <div class="w-[400px] h-[400px] mt-7">

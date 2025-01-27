@@ -1,26 +1,21 @@
 <span *ngIf="control?.invalid && (control?.dirty || control?.touched)" class="label-error-small">
   <ng-container *ngIf="control!.errors?.['required']">
-    {{ TEXT.FORM_HINT_ERROR.REQUIRED }}
+    {{ 'REQUIRED' | translate }}
     <br />
   </ng-container>
 
   <ng-container *ngIf="control!.errors?.['email']">
-    {{ TEXT.FORM_HINT_ERROR.INVALID_EMAIL }}
+    {{ 'INVALID_EMAIL' | translate }}
     <br />
   </ng-container>
 
   <ng-container *ngIf="control!.errors?.['minlength']">
-    {{
-      TEXT.FORM_HINT_ERROR.MIN_LENGTH.replace(
-        '{minlength}',
-        control!.errors?.['minlength']?.requiredLength
-      )
-    }}
+    {{ 'MIN_LENGTH' | translate }}
     <br />
   </ng-container>
 
   <ng-container *ngIf="control!.errors?.['passwordMismatch']">
-    {{ TEXT.FORM_HINT_ERROR.PASSWORDS_NOT_MATCH }}
+    {{ 'PASSWORDS_NOT_MATCH' | translate }}
     <br />
   </ng-container>
 </span>

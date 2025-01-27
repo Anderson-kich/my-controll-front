@@ -15,7 +15,7 @@
       &:focus + label,
       &:not(:placeholder-shown) + label {
         top: -10px;
-        background-color: #f9fafb;
+        background: linear-gradient(to bottom, transparent 50%, #f9fafb 50%);
         color: #dc2626;
         transform: scale(0.9);
       }
@@ -28,7 +28,7 @@
     &:focus + label,
     &:not(:placeholder-shown) + label {
       top: -10px;
-      background-color: #f9fafb;
+      background: linear-gradient(to bottom, transparent 50%, #f9fafb 50%);
       color: #5b21b6;
       transform: scale(0.9);
     }

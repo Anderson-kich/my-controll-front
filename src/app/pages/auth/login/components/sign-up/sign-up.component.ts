@@ -14,6 +14,7 @@ import { ButtonComponent } from '../../../../../shared/components/button/button.
 import { FormHintErrorComponent } from '../../../../../shared/components/form-hint-error/form-hint-error.component';
 import { IconComponent } from '../../../../../shared/components/icon/icon.component';
 import { ValidationClassDirective } from '../../../../../shared/directives/validation-class.directive';
+import { TranslationPipe } from '../../../../../shared/pipes/translation.pipe';
 
 @Component({
   selector: 'app-sign-up',
@@ -26,6 +27,7 @@ import { ValidationClassDirective } from '../../../../../shared/directives/valid
     ValidationClassDirective,
     FormHintErrorComponent,
     IconComponent,
+    TranslationPipe,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',

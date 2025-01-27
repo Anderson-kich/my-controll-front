@@ -13,40 +13,10 @@
   }
 }
 
-/* Button Styles */
-@layer components {
-  .btn {
-    @apply flex justify-center items-center;
-    @apply gap-2 rounded-md px-9 h-12;
-    @apply text-base font-semibold;
-  }
-
-  .btn.purple {
-    @apply bg-purple-500 hover:bg-purple-600 text-white active:bg-purple-500 active:shadow-inner;
-    @apply disabled:bg-purple-300 disabled:hover:bg-purple-300 disabled:text-neutral-50;
-  }
-
-  .btn.disabled {
-    @apply bg-zinc-300 text-white border-none;
-  }
-
-  .btn.blue {
-    @apply bg-blue-500 hover:bg-blue-600 text-white;
-  }
-
-  .btn.red {
-    @apply bg-red-500 hover:bg-red-600 text-white;
-  }
-
-  .btn.green {
-    @apply bg-green-500 hover:bg-green-600 text-white;
-  }
-}
-
 /* Form Styles */
 @layer components {
   .input-form {
-    @apply rounded-md pl-4 h-12 border border-gray-300 text-zinc-500;
+    @apply rounded-md pl-4 h-12 border border-gray-300 text-zinc-500 text-sm;
     @apply focus:bg-purple-50 focus:border-2 focus:border-purple-200;
   }
 
@@ -84,7 +54,7 @@
 
   p,
   .body {
-    @apply font-normal text-zinc-800 text-base leading-9 tracking-tighter;
+    @apply font-normal text-zinc-800 text-base leading-6 tracking-tighter;
   }
 
   .body-small {

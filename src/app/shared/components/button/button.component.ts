@@ -14,4 +14,5 @@ export class ButtonComponent {
   @Input() public disabled = false;
   @Input() public type = 'submit';
   @Input() public loading = false;
+  @Input() public className = 'purple';
 }
